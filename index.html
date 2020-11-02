@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+  <script src="projects.js"></script>
 
   </head>
   <body data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
@@ -38,23 +39,14 @@
       <div class="site-mobile-menu-body"><ul class="site-nav-wrap">
                 <li class="active"><a href="index.html">Home</a></li>
                 <li class="has-children"><span class="arrow-collapse collapsed" data-toggle="collapse" data-target="#collapseItem0"></span>
-                  <a href="single.html">Gallery</a>
+                  <a href="#">Projects</a>
                   <ul class="collapse" id="collapseItem0">
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Portrait</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Animals</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li class="has-children"><span class="arrow-collapse collapsed" data-toggle="collapse" data-target="#collapseItem1"></span>
-                      <a href="#">Sub Menu</a>
-                      <ul class="collapse" id="collapseItem1">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
+                            <script>
+          for(let [fldr,cnt] of Object.entries(projects))
+          {
+            document.write(`<li><a href="single.html?a=${cnt}_${fldr}">${fldr}</a></li> `);
+          }
+        </script>
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
@@ -93,23 +85,14 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="index.html">Home</a></li>
                 <li class="has-children">
-                  <a href="single.html">Gallery</a>
+                  <a href="#">Projects</a>
                   <ul class="dropdown">
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Portrait</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Animals</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
+                            <script>
+          for(let [fldr,cnt] of Object.entries(projects))
+          {
+            document.write(`<li><a href="single.html?a=${cnt}_${fldr}">${fldr}</a></li> `);
+          }
+        </script>
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
@@ -151,70 +134,26 @@
   <div class="container-fluid aos-init aos-animate" data-aos="fade" data-aos-delay="500">
     <div class="swiper-container images-carousel swiper-container-horizontal swiper-container-free-mode">
         <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+
+
+          <script>
+          for(let [fldr,cnt] of Object.entries(projects))
+          {
+            document.write(`
+
             <div class="swiper-slide swiper-slide-active" style="width: 600.667px; margin-right: 20px;">
               <div class="image-wrap">
                 <div class="image-info">
-                  <h2 class="mb-3">Nature</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <h2 class="mb-3">${fldr}</h2>
+                  <a href="single.html?a=${cnt}_${fldr}" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
-                <img src="images/img_1.jpg" alt="Image">
+                <img src="images/${fldr}/cover.webp" alt="Image">
               </div>
             </div>
-            <div class="swiper-slide swiper-slide-next" style="width: 600.667px; margin-right: 20px;">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Portrait</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_2.jpg" alt="Image">
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: 600.667px; margin-right: 20px;">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">People</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_3.jpg" alt="Image">
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: 600.667px; margin-right: 20px;">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Architecture</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_4.jpg" alt="Image">
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: 600.667px; margin-right: 20px;">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Animals</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_5.jpg" alt="Image">
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: 600.667px; margin-right: 20px;">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Sports</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_6.jpg" alt="Image">
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: 600.667px; margin-right: 20px;">
-              <div class="image-wrap">
-                <div class="image-info">
-                  <h2 class="mb-3">Travel</h2>
-                  <a href="single.html" class="btn btn-outline-white py-2 px-4">More Photos</a>
-                </div>
-                <img src="images/img_7.jpg" alt="Image">
-              </div>
-            </div>
-        </div>
+              `);
+          }
+        </script>
+           
 
         <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
         <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>

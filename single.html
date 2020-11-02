@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+  // var [cnt, fldr] = location.split('=')[1].split('_');
+   var [cnt, fldr] =  location.toString().split('=')[1].split('_');
+
+  var nm = decodeURIComponent(fldr);
+console.log(nm)
+</script>
   <head>
-    <title>Photon &mdash; Colorlib Website Template</title>
+    <title>Volovatz. Designers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,43 +44,55 @@
           <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
-      <div class="site-mobile-menu-body"></div>
+      <div class="site-mobile-menu-body"><ul class="site-nav-wrap">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="has-children"><span class="arrow-collapse collapsed" data-toggle="collapse" data-target="#collapseItem0"></span>
+                  <a href="#">Projects</a>
+                  <ul class="collapse" id="collapseItem0">
+                    <li><a href="single.html?a=11_M.N.K APARTMENT">M.N.K APARTMENT</a></li>
+                    <li><a href="single.html?a=4_V.R.A APARTMENT">V.R.A APARTMENT</a></li>
+                  </ul>
+                </li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul><ul class="site-nav-wrap" data-class="social">
+                <li>
+                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                </li>
+                <li>
+                  <a href="#" class="pl-3 pr-3"><span class="icon-youtube-play"></span></a>
+                </li>
+              </ul></div>
     </div>
-    
 
 
 
-    <header class="site-navbar py-3 border-bottom" role="banner">
+
+    <header class="site-navbar py-3" role="banner">
 
       <div class="container-fluid">
         <div class="row align-items-center">
-          
-          <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Photon</a></h1>
+
+          <div class="col-6 col-xl-2 aos-init aos-animate" data-aos="fade-down">
+            <h1 class="mb-0"><img src="images/Logo.png" class="img-fluid"></h1>
           </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+          <div class="col-10 col-md-8 d-none d-xl-block aos-init aos-animate" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="index.html">Home</a></li>
-                <li class="has-children active">
-                  <a href="single.html">Gallery</a>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <a href="#">Projects</a>
                   <ul class="dropdown">
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Portrait</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Animals</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="single.html?a=11_M.N.K APARTMENT">M.N.K APARTMENT</a></li>
+                    <li><a href="single.html?a=4_V.R.A APARTMENT">V.R.A APARTMENT</a></li>
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
@@ -83,7 +102,7 @@
             </nav>
           </div>
 
-          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+          <div class="col-6 col-xl-2 text-right aos-init aos-animate" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li>
@@ -107,8 +126,12 @@
 
         </div>
       </div>
-      
+
     </header>
+
+
+
+
 
 
 
@@ -120,14 +143,25 @@
         <div class="col-md-7">
           <div class="row mb-5">
             <div class="col-12 ">
-              <h2 class="site-section-heading text-center">Nature Gallery</h2>
+              <h2 class="site-section-heading text-center"><script>document.write(nm);</script></h2>
             </div>
           </div>
         </div>
     
       </div>
       <div class="row" id="lightgallery">
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="images/big-images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
+        <script>
+          for (let i=1;i<=cnt;i++)
+          {
+            document.write(`
+                <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="images/${fldr}/large/${i}.webp" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
+          <a href="#"><img src="images/${fldr}/small/${i}.webp" alt="IMage" class="img-fluid"></a>
+        </div>
+
+              `);
+          }
+        </script>
+        <!-- <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="images/big-images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
           <a href="#"><img src="images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="images/big-images/nature_big_2.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam omnis quaerat molestiae, praesentium. Ipsam, reiciendis. Aut molestiae animi earum laudantium.</p>">
@@ -243,7 +277,7 @@
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="images/big-images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem tempora deleniti, consectetur quisquam labore vitae quod quae debitis hic ab!</p>">
           <a href="#"><img src="images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
         </div>
-
+ -->
       </div>
     </div>
   </div>
