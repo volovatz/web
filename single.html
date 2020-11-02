@@ -32,10 +32,12 @@ console.log(nm)
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+  <script src="projects.js"></script>
     
   </head>
   <body>
-  
+ 
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -44,55 +46,35 @@ console.log(nm)
           <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
-      <div class="site-mobile-menu-body"><ul class="site-nav-wrap">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="has-children"><span class="arrow-collapse collapsed" data-toggle="collapse" data-target="#collapseItem0"></span>
-                  <a href="#">Projects</a>
-                  <ul class="collapse" id="collapseItem0">
-                    <li><a href="single.html?a=11_M.N.K APARTMENT">M.N.K APARTMENT</a></li>
-                    <li><a href="single.html?a=4_V.R.A APARTMENT">V.R.A APARTMENT</a></li>
-                  </ul>
-                </li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul><ul class="site-nav-wrap" data-class="social">
-                <li>
-                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-youtube-play"></span></a>
-                </li>
-              </ul></div>
+      <div class="site-mobile-menu-body"></div>
     </div>
+    
 
 
 
-
-    <header class="site-navbar py-3" role="banner">
+    <header class="site-navbar py-3 border-bottom" role="banner">
 
       <div class="container-fluid">
         <div class="row align-items-center">
-
-          <div class="col-6 col-xl-2 aos-init aos-animate" data-aos="fade-down">
-            <h1 class="mb-0"><img src="images/Logo.png" class="img-fluid"></h1>
+          
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Photon</a></h1>
           </div>
-          <div class="col-10 col-md-8 d-none d-xl-block aos-init aos-animate" data-aos="fade-down">
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="has-children">
-                  <a href="#">Projects</a>
+                <li><a href="index.html">Home</a></li>
+                <li class="has-children active">
+                  <a href="single.html">Projects</a>
                   <ul class="dropdown">
-                    <li><a href="single.html?a=11_M.N.K APARTMENT">M.N.K APARTMENT</a></li>
-                    <li><a href="single.html?a=4_V.R.A APARTMENT">V.R.A APARTMENT</a></li>
+   
+  <script>
+          for(let [fldr,cnt] of Object.entries(projects))
+          {
+            document.write(`<li><a href="single.html?a=${cnt}_${fldr}">${fldr}</a></li> `);
+          }
+        </script>
                   </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
@@ -102,7 +84,7 @@ console.log(nm)
             </nav>
           </div>
 
-          <div class="col-6 col-xl-2 text-right aos-init aos-animate" data-aos="fade-down">
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li>
@@ -126,14 +108,10 @@ console.log(nm)
 
         </div>
       </div>
-
+      
     </header>
 
-
-
-
-
-
+<!--  -->
 
   <div class="site-section"  data-aos="fade">
     <div class="container-fluid">
