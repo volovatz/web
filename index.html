@@ -124,13 +124,15 @@ document.write(`
 
           for(let [fldr,cnt] of Object.entries(projects))
           {
+            let cnt=itm.cnt;
+            let itxt=itm.txt;
             document.write(`
 
             <div class="swiper-slide swiper-slide-active" style="width: 600.667px; margin-right: 20px;">
               <div class="image-wrap">
                 <div class="image-info">
                   <h2 class="mb-3">${fldr}</h2>
-                  <a href="single.html?a=${cnt}_${fldr}" class="btn btn-outline-white py-2 px-4">More Photos</a>
+                  <a href="single.html?a=${cnt}_${fldr}_${itxt}" class="btn btn-outline-white py-2 px-4">More Photos</a>
                 </div>
                 <img src="images/${fldr}/cover.jpg" alt="Image">
               </div>
